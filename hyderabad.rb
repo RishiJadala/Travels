@@ -1,4 +1,8 @@
+ HEAD
 # hyderabad.rb
+=======
+# hyderabad_trip.rb
+ master
 
 class HyderabadTrip
   def initialize
@@ -42,4 +46,27 @@ end
 trip = HyderabadTrip.new
 trip.welcome_message
 trip.list_attractions
+ HEAD
+
+trip.trip_plan(3)end
+
+  def trip_plan(days)
+    puts "\nYour #{days}-day trip plan for #{@city}:"
+    if days >= @attractions.length
+      puts "You have enough days to visit all major attractions!"
+    else
+      puts "Recommended attractions for #{days} days:"
+      @attractions.first(days).each do |place|
+        puts "- Visit #{place}"
+      end
+    end
+    puts "Don't miss trying the famous Hyderabadi Biryani!"
+  end
+end
+
+# Create and use the HyderabadTrip class
+trip = HyderabadTrip.new
+trip.welcome_message
+trip.list_attractions
+>>>>>>> master
 trip.trip_plan(3)
